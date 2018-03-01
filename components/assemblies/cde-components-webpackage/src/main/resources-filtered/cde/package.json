@@ -1,0 +1,16 @@
+{
+  "name": "cde-components",
+  "version": "${project.version}",
+
+  "scripts": {
+    "preconfig": "preconfig.js"
+  },
+
+  "config": {
+
+    "dash": {
+      "endpoint": "//cxf/cde/renderer/getDashboard?path="
+    }
+
+  }
+}
