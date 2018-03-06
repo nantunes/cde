@@ -5,5 +5,5 @@
   <feature name="pentaho-cde-renderer" version="${project.version}">
     <feature version="${karaf.version}">cxf-jaxrs</feature>
   </feature>
-  
+
 </features>

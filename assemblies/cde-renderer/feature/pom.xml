@@ -22,11 +22,13 @@
     </dependency>
     <dependency>
       <groupId>org.pentaho</groupId>
-      <artifactId>pentaho-requirejs-manager</artifactId>
+      <artifactId>pentaho-requirejs-osgi-manager</artifactId>
       <version>${pentaho-osgi-bundles.version}</version>
       <classifier>features</classifier>
       <type>xml</type>
     </dependency>
+
+    <!-- Ctools Webpackages -->
     <dependency>
       <groupId>pentaho</groupId>
       <artifactId>pentaho-cdf-webpackage</artifactId>
@@ -38,6 +40,18 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <dependency>
+      <groupId>org.pentaho.ctools</groupId>
+      <artifactId>pentaho-cde-components-webpackage</artifactId>
+      <version>${project.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
     <dependency>
       <groupId>org.pentaho.ctools</groupId>
       <artifactId>cde-core-impl</artifactId>

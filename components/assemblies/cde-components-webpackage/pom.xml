@@ -9,7 +9,9 @@
     <version>8.1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>cde-components-webpackage</artifactId>
+  <artifactId>pentaho-cde-components-webpackage</artifactId>
+  <version>8.1.0.0-SNAPSHOT</version>
+
   <packaging>bundle</packaging>
 
   <description>Pentaho Community Dashboard Editor Components for Karaf</description>
@@ -62,10 +64,6 @@
 
             <configuration>
               <resources>
-                <resource>
-                  <targetPath>cdf</targetPath>
-                  <directory>${basedir}/target/dependency/cdf</directory>
-                </resource>
                 <resource>
                   <targetPath>cde</targetPath>
                   <directory>${basedir}/target/dependency/cde</directory>

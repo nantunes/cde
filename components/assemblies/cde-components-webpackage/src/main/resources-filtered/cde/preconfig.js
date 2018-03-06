@@ -11,47 +11,19 @@
  * the license for the specific language governing your rights and limitations.
  */
 
-/* globals mappedModuleId, modulePath, requireCfg */
+/* globals moduleId, mappedModuleId, modulePath, requireCfg */
 
 requireCfg.map = requireCfg.map || {};
 requireCfg.map[mappedModuleId] = requireCfg.map[mappedModuleId] || {};
+requireCfg.map['*'] = requireCfg.map['*'] || {};
 requireCfg.packages = requireCfg.packages || [];
 
 var moduleMap = requireCfg.map[mappedModuleId];
-var isDebug = typeof document === "undefined" || document.location.href.indexOf("debug=true") > 0;
 
-var resourcesPath = modulePath + '/plugin/pentaho-cdf-dd/api/resources';
-var componentsPath = resourcesPath + (isDebug ? '/components' : '/components-compressed');
+// TODO is this needed?
+// requireCfg.paths['cde/resources'] = resourcesPath;
+// requireCfg.paths['cde/repo'] = resourcesPath + '/public/cde';
 
-requireCfg.paths['cde/resources'] = resourcesPath;
-requireCfg.paths['cde/components'] = componentsPath;
-requireCfg.paths['cde/repo'] = resourcesPath + '/public/cde';
-
-var cdeComponents = [
-  'PopupComponent',
-  'ExportButtonComponent',
-  'AjaxRequestComponent',
-  'CggComponent',
-  'DuplicateComponent',
-  'NewSelectorComponent',
-  'RaphaelComponent',
-  'RelatedContentComponent',
-  'SiteMapComponent',
-  'ViewManagerComponent',
-  'GoogleAnalyticsComponent',
-  'DashboardComponent'
-];
-
-cdeComponents.forEach(function(component) {
-  requireCfg.push({
-    name: 'cde/components/' + component,
-    location: componentsPath + '/' + component + '/amd',
-    main: component
-  })
+Object.keys(moduleMap).forEach(function(key) {
+  requireCfg.map['*'][key] = moduleMap[key];
 });
-
-// components that share a common package location are mapped to the appropriate subfolder
-moduleMap['cde/components/ExportPopupComponent'] = 'cde/components/PopupComponent/ExportPopupComponent';
-moduleMap['cde/components/CggDialComponent'] = 'cde/components/CggComponent/CggDialComponent';
-
-requireCfg.map['*'] = moduleMap;
