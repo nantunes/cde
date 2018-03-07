@@ -1,22 +1,13 @@
 {
-  "name": "cde-components",
+  "name": "@pentaho/cde-components",
   "version": "${project.version}",
 
-  "scripts": {
-    "preconfig": "preconfig.js"
-  },
-
   "dependencies": {
-    "cdf": "${project.version}"
+    "@pentaho/cdf": "${project.version}"
   },
 
   "paths": {
     "cde/components": "/components"
-  },
-
-  "map": {
-    "cde/components/ExportPopupComponent": "cde/components/PopupComponent/ExportPopupComponent",
-    "cde/components/CggDialComponent": "cde/components/CggComponent/CggDialComponent"
   },
 
   "packages": [
@@ -24,6 +15,10 @@
       "name": "cde/components/PopupComponent",
       "location": "/components/PopupComponent/amd",
       "main": "PopupComponent"
+    }, {
+      "name": "cde/components/ExportPopupComponent",
+      "location": "/components/PopupComponent/amd",
+      "main": "ExportPopupComponent"
     }, {
       "name": "cde/components/ExportButtonComponent",
       "location": "/components/ExportButtonComponent/amd",
@@ -36,6 +31,10 @@
       "name": "cde/components/CggComponent",
       "location": "/components/CggComponent/amd",
       "main": "CggComponent"
+    }, {
+      "name": "cde/components/CggDialComponent",
+      "location": "/components/CggComponent/amd",
+      "main": "CggDialComponent"
     }, {
       "name": "cde/components/DuplicateComponent",
       "location": "/components/DuplicateComponent/amd",
@@ -73,8 +72,7 @@
 
   "config": {
     "dash": {
-      "endpoint": "http://localhost:8181/cxf/cde/renderer/getDashboard?path="
+      "endpoint": "/cxf/cde/renderer/getDashboard?path="
     }
-
   }
 }
